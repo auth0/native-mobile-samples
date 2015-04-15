@@ -4,8 +4,8 @@
 <dict>
 	<key>Auth0ClientId</key>
 	<string>{CLIENT_ID}</string>
-	<key>Auth0Tenant</key>
-	<string>{TENANT}</string>
+	<key>Auth0Domain</key>
+	<string>{DOMAIN}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

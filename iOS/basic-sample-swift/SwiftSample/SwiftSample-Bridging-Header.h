@@ -6,5 +6,5 @@
 #import <JWTDecode/A0JWTDecoder.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SimpleKeychain/A0SimpleKeychain.h>
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>

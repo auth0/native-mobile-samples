@@ -1,16 +1,8 @@
-platform :ios, "7.0"
-
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "8.0"
 
 target "SwiftSample" do
-	pod "Lock", "~> 1.7"
-    pod "SDWebImage", "~> 3.7.1"
+	pod "Lock", "~> 1.10"
     pod "JWTDecode", "~> 0.2"
-    pod "SimpleKeychain", "~> 0.2"
-    pod "MBProgressHUD", "~> 0.8"
+    pod "SimpleKeychain", "~> 0.3"
+    pod "MBProgressHUD", "~> 0.9"
 end
-
-target "SwiftSampleTests" do
-
-end
-
