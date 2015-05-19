@@ -41,7 +41,8 @@ class HomeViewController: UIViewController {
                     keychain.clearAll()
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
                 }
-                A0APIClient.sharedClient().fetchNewIdTokenWithRefreshToken(refreshToken, parameters: nil, success: success, failure: failure)
+                let client = MyApplication.sharedInstance.lock.apiClient()
+                client.fetchNewIdTokenWithRefreshToken(refreshToken, parameters: nil, success: success, failure: failure)
             } else {
                 self.performSegueWithIdentifier("showProfile", sender: self)
             }
@@ -49,7 +50,8 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func showSignIn(sender: AnyObject) {
-        let authController = A0LockViewController()
+        let lock = MyApplication.sharedInstance.lock
+        let authController = lock.newLockViewController()
         authController.closable = true
         authController.onAuthenticationBlock = {(profile:A0UserProfile!, token:A0Token!) -> () in
             let keychain = MyApplication.sharedInstance.keychain

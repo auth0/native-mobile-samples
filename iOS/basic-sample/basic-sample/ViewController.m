@@ -1,10 +1,24 @@
+// ViewController.m
 //
-//  ViewController.m
-//  basic-sample
+// Copyright (c) 2014 Auth0 (http://auth0.com)
 //
-//  Created by Martin Gontovnikas on 30/09/14.
-//  Copyright (c) 2014 Auth0. All rights reserved.
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "ViewController.h"
 #import "Application.h"
@@ -30,7 +44,8 @@
             NSString *refreshToken = [store stringForKey:@"refresh_token"];
             @weakify(self);
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [[A0APIClient sharedClient] fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
+            A0APIClient *client = [[[Application sharedInstance] lock] apiClient];
+            [client fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
                 @strongify(self);
                 [store setString:token.idToken forKey:@"id_token"];
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -47,7 +62,8 @@
 }
 
 - (IBAction)showSignIn:(id)sender {
-    A0LockViewController *controller = [[A0LockViewController alloc] init];
+    A0Lock *lock = [[Application sharedInstance] lock];
+    A0LockViewController *controller = [lock newLockViewController];
     controller.closable = true;
     @weakify(self);
     controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {

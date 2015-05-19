@@ -28,13 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let fbAuthenticator = A0FacebookAuthenticator.newAuthenticatorWithDefaultPermissions()
-        A0IdentityProviderAuthenticator.sharedInstance().registerAuthenticationProvider(fbAuthenticator)
+        let lock = MyApplication.sharedInstance.lock
+        lock.applicationLaunchedWithOptions(launchOptions)
         return true
     }
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        return A0IdentityProviderAuthenticator.sharedInstance().handleURL(url, sourceApplication: sourceApplication)
+        let lock = MyApplication.sharedInstance.lock
+        return lock.handleURL(url, sourceApplication: sourceApplication)
     }
 
 }

@@ -3,7 +3,8 @@ platform :ios, "8.0"
 inhibit_all_warnings!
 
 target "SwiftSample" do
-  pod "Lock", "~> 1.10"
+  pod "Lock", "~> 1.12"
+  pod "Lock-Facebook", "~> 1.0"
   pod "JWTDecode", "~> 0.2"
   pod "SimpleKeychain", "~> 0.3"
   pod "MBProgressHUD", "~> 0.9"

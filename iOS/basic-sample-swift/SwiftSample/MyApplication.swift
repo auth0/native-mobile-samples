@@ -23,16 +23,16 @@
 import UIKit
 
 class MyApplication: NSObject {
-    class var sharedInstance :MyApplication {
-        struct Singleton {
-            static let instance = MyApplication()
-        }
-        return Singleton.instance
-    }
+
+    static let sharedInstance = MyApplication()
 
     let keychain: A0SimpleKeychain
+    let lock: A0Lock
 
     private override init() {
         keychain = A0SimpleKeychain(service: "Auth0")
+        lock = A0Lock.newLock()
+        let facebook = A0FacebookAuthenticator.newAuthenticatorWithDefaultPermissions()
+        lock.registerAuthenticators([facebook])
     }
 }

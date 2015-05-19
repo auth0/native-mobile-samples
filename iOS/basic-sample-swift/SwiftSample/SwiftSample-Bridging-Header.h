@@ -3,6 +3,7 @@
 //
 
 #import <Lock/Lock.h>
+#import <Lock-Facebook/A0FacebookAuthenticator.h>
 #import <JWTDecode/A0JWTDecoder.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SimpleKeychain/A0SimpleKeychain.h>
