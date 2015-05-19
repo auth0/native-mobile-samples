@@ -23,7 +23,7 @@
 import UIKit
 import SimpleKeychain
 import Lock
-import Lock_Facebook
+import LockFacebook
 
 class MyApplication: NSObject {
 
