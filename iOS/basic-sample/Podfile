@@ -4,7 +4,7 @@ inhibit_all_warnings!
 
 target "basic-sample" do
     pod "Lock", "~> 1.12"
-    pod "Lock-Facebook", "~> 1.0"
+    pod "Lock-Facebook", "~> 2.0"
     pod "JWTDecode", "~> 0.2"
     pod "SimpleKeychain", "~> 0.3"
     pod "MBProgressHUD", "~> 0.9"

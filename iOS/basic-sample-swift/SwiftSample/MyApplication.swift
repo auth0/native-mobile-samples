@@ -21,6 +21,9 @@
 // THE SOFTWARE.
 
 import UIKit
+import SimpleKeychain
+import Lock
+import Lock_Facebook
 
 class MyApplication: NSObject {
 

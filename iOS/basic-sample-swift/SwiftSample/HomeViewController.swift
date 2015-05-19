@@ -21,6 +21,9 @@
 // THE SOFTWARE.
 
 import UIKit
+import JWTDecode
+import MBProgressHUD
+import Lock
 
 class HomeViewController: UIViewController {
 

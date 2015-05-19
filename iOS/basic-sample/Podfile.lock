@@ -34,8 +34,17 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
-  - Facebook-iOS-SDK (3.23.2):
-    - Bolts (~> 1.0)
+  - FBSDKCoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.1.0)
+    - FBSDKCoreKit/no-arc (= 4.1.0)
+  - FBSDKCoreKit/arc (4.1.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.1.0):
+    - FBSDKCoreKit
   - ISO8601DateFormatter (0.7)
   - JWTDecode (0.2.0)
   - libextobjc (0.4.1):
@@ -78,8 +87,10 @@ PODS:
     - libextobjc (~> 0.4)
     - Lock/Core (= 1.12.0)
     - Lock/UI (= 1.12.0)
-  - Lock-Facebook (1.0.0):
-    - Facebook-iOS-SDK (~> 3.15)
+  - Lock-Facebook (2.0.0):
+    - CocoaLumberjack (~> 2.0)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
     - Lock/Core (~> 1.11)
   - Lock/Core (1.12.0):
     - AFNetworking (~> 2.5)
@@ -96,7 +107,7 @@ PODS:
 DEPENDENCIES:
   - JWTDecode (~> 0.2)
   - Lock (~> 1.12)
-  - Lock-Facebook (~> 1.0)
+  - Lock-Facebook (~> 2.0)
   - MBProgressHUD (~> 0.9)
   - SimpleKeychain (~> 0.3)
 
@@ -104,12 +115,13 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Bolts: aac24961496d504aa56fc267cde95162a71bac39
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
+  FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
+  FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   JWTDecode: e45da8ccd591c69d13e38b1daa86d7a87066fa37
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Lock: ca0a339e418793d13842c4d901c7a5f8b698d87e
-  Lock-Facebook: fc83349f48dee2d41fe8a36013502fe64a0d77fc
+  Lock-Facebook: 6ef9b899e23ceea73a837bba440856424b8c6892
   MBProgressHUD: d8e7ea388dc1549a42e0d219067cf5f2c898fb66
   SimpleKeychain: 8de48eb1de10c6403911a6be52e127e5b5d31404
 

@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import Lock
 
 class ProfileViewController: UIViewController {
 
