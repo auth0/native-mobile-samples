@@ -13,6 +13,8 @@ var {
 
 var WelcomeView = require('./welcome-view');
 
+require('NativeModules').LockReact.init({});
+
 var ReactNativeSample = React.createClass({
   render: function() {
     return (

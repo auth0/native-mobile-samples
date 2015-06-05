@@ -1,6 +1,9 @@
 platform :ios, '8.0'
 
 target 'ReactNativeSample' do
-  pod 'LockReact', '~> 0.2'
+  pod 'LockReact/NativeModule', '~> 0.4'
+  pod 'React'
+  pod 'React/RCTText'
+  pod 'React/RCTImage'
 end
 

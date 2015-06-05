@@ -9,7 +9,8 @@ var {
   TouchableHighlight,
 } = React;
 
-var Lock = require('NativeModules').LockReactModule;
+var Lock = require('NativeModules').LockReact;
+
 var ProfileView = require('./profile-view');
 
 var WelcomeView = React.createClass({
