@@ -13,6 +13,6 @@ Once you have that, just clone the project and run the following:
 
 1. `pod install`
 2. `./packager_start.sh`
-1. `open SwiftSample.xcworkspace` and hit _Command + R_
+1. `open ReactNativeSample.xcworkspace` and hit _Command + R_
 
 Enjoy your iOS React Native app now :).
