@@ -48,8 +48,7 @@
 }
 
 - (void)callAPI:(id)sender {
-    NSString *baseURLString = [[NSBundle mainBundle] infoDictionary][@"SampleAPIBaseURL"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:baseURLString]];
+    NSURLRequest *request = [self buildAPIRequest];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     @weakify(self);
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -67,4 +66,12 @@
     [alert show];
 }
 
+- (NSURLRequest *)buildAPIRequest {
+    A0SimpleKeychain *keychain = [[Application sharedInstance] store];
+    NSString *token = [keychain stringForKey:@"id_token"];
+    NSString *baseURLString = [[NSBundle mainBundle] infoDictionary][@"SampleAPIBaseURL"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:baseURLString]];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+    return request;
+}
 @end

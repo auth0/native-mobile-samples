@@ -38,9 +38,7 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func callAPI(sender: AnyObject) {
-        let info = NSBundle.mainBundle().infoDictionary!
-        let urlString = info["SampleAPIBaseURL"] as! String
-        let request = NSURLRequest(URL: NSURL(string: urlString)!)
+        let request = buildAPIRequest()
         let operation = AFHTTPRequestOperation(request: request)
         operation.setCompletionBlockWithSuccess({ (operation, responseObject) -> Void in
             self.showMessage("We got the secured data successfully")
@@ -53,5 +51,14 @@ class ProfileViewController: UIViewController {
     private func showMessage(message: String) {
         let alert = UIAlertView(title: message, message: nil, delegate: nil, cancelButtonTitle: "OK")
         alert.show()
+    }
+
+    private func buildAPIRequest() -> NSURLRequest {
+        let info = NSBundle.mainBundle().infoDictionary!
+        let urlString = info["SampleAPIBaseURL"] as! String
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        let keychain = MyApplication.sharedInstance.keychain
+        let token = keychain.stringForKey("id_token") as! String
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
 }
