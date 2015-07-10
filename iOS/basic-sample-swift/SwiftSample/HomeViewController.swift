@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         let keychain = MyApplication.sharedInstance.keychain
         let idToken = keychain.stringForKey("id_token")
         if (idToken != nil) {
-            if (A0JWTDecoder.isJWTExpired(idToken)) {
+            if (JWTDecode.expired(jwt: idToken)) {
                 let refreshToken = keychain.stringForKey("refresh_token")
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 let success = {(token:A0Token!) -> () in
@@ -56,13 +56,18 @@ class HomeViewController: UIViewController {
         let lock = MyApplication.sharedInstance.lock
         let authController = lock.newLockViewController()
         authController.closable = true
-        authController.onAuthenticationBlock = {(profile:A0UserProfile!, token:A0Token!) -> () in
-            let keychain = MyApplication.sharedInstance.keychain
-            keychain.setString(token.idToken, forKey: "id_token")
-            keychain.setString(token.refreshToken, forKey: "refresh_token")
-            keychain.setData(NSKeyedArchiver.archivedDataWithRootObject(profile), forKey: "profile")
-            self.dismissViewControllerAnimated(true, completion: nil)
-            self.performSegueWithIdentifier("showProfile", sender: self)
+        authController.onAuthenticationBlock = { (profile, token) -> () in
+            switch (profile, token) {
+            case let (.Some(profile), .Some(token)):
+                let keychain = MyApplication.sharedInstance.keychain
+                keychain.setString(token.idToken, forKey: "id_token")
+                keychain.setString(token.refreshToken, forKey: "refresh_token")
+                keychain.setData(NSKeyedArchiver.archivedDataWithRootObject(profile), forKey: "profile")
+                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("showProfile", sender: self)
+            default:
+                println("User SignedUp without loggin in")
+            }
         }
         self.presentViewController(authController, animated: true, completion: nil)
     }
