@@ -31,7 +31,7 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>a0{CLIENT_ID}</string>
+				<string>{MOBILE_CUSTOM_SCHEME}</string>
 			</array>
 		</dict>
 		<dict>
