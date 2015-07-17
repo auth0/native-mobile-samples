@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36ADAF4C3C83BE833E0DAD17 /* Pods_Auth0Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02929022167CEE61D14F1702 /* Pods_Auth0Storage.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E7190313E481D3CDFC06545 /* Pods_Profile_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9B5D265C5970C308FE8809 /* Pods_Profile_Sample.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5F46A67D1B50669400B974B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A6701B50669400B974B8 /* AppDelegate.swift */; };
 		5F46A67E1B50669400B974B8 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A6711B50669400B974B8 /* Application.swift */; };
@@ -17,22 +16,9 @@
 		5F46A6831B50669400B974B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A6781B50669400B974B8 /* ProfileViewController.swift */; };
 		5F46A6851B50669400B974B8 /* UserProfile+UserMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A67B1B50669400B974B8 /* UserProfile+UserMetadata.swift */; };
 		5F46A6861B50669400B974B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A67C1B50669400B974B8 /* ViewController.swift */; };
-		5F60D8A91B39EB41004A8135 /* TokenRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60D8A81B39EB41004A8135 /* TokenRefresh.swift */; };
-		5FF44D751B3244820011AE71 /* Auth0Storage.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF44D741B3244820011AE71 /* Auth0Storage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FF44D871B3244820011AE71 /* Auth0Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF44D701B3244820011AE71 /* Auth0Storage.framework */; };
-		5FF44D881B3244820011AE71 /* Auth0Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF44D701B3244820011AE71 /* Auth0Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5FF44D8F1B3244980011AE71 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8ED661AFA996800BC8655 /* Storage.swift */; };
+		5F748DC71B59A2F1005ED545 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F748DC51B59A2F1005ED545 /* Storage.swift */; };
+		5F748DC81B59A2F1005ED545 /* TokenRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F748DC61B59A2F1005ED545 /* TokenRefresh.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5FF44D851B3244820011AE71 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F29014A1AF817A1005A506F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FF44D6F1B3244810011AE71;
-			remoteInfo = Auth0Storage;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F91DDC71B28CED600955523 /* Embed Frameworks */ = {
@@ -41,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FF44D881B3244820011AE71 /* Auth0Storage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,11 +51,8 @@
 		5F46A6781B50669400B974B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5F46A67B1B50669400B974B8 /* UserProfile+UserMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserProfile+UserMetadata.swift"; sourceTree = "<group>"; };
 		5F46A67C1B50669400B974B8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5F60D8A81B39EB41004A8135 /* TokenRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresh.swift; sourceTree = "<group>"; };
-		5FB8ED661AFA996800BC8655 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		5FF44D701B3244820011AE71 /* Auth0Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth0Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FF44D731B3244820011AE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FF44D741B3244820011AE71 /* Auth0Storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Auth0Storage.h; sourceTree = "<group>"; };
+		5F748DC51B59A2F1005ED545 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5F748DC61B59A2F1005ED545 /* TokenRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresh.swift; sourceTree = "<group>"; };
 		816DEBCD32B2E2FA6FAA1ECD /* Pods-SwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSample/Pods-SwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		88CAAC122440CE8BFAE7214A /* Pods-Auth0Storage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Storage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auth0Storage/Pods-Auth0Storage.debug.xcconfig"; sourceTree = "<group>"; };
 		96DF9A9C0B51A8BE07CB9791 /* Pods-Auth0Storage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Storage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Auth0Storage/Pods-Auth0Storage.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,16 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF44D871B3244820011AE71 /* Auth0Storage.framework in Frameworks */,
 				4E7190313E481D3CDFC06545 /* Pods_Profile_Sample.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF44D6C1B3244810011AE71 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36ADAF4C3C83BE833E0DAD17 /* Pods_Auth0Storage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				5F46A66F1B50669400B974B8 /* ProfileSample */,
-				5FF44D711B3244820011AE71 /* Auth0Storage */,
 				5F2901531AF817A1005A506F /* Products */,
 				51278636799F184FA9701E9F /* Pods */,
 				F14E98E0BBCD2E770A2436F7 /* Frameworks */,
@@ -129,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				5F2901521AF817A1005A506F /* Profile Sample.app */,
-				5FF44D701B3244820011AE71 /* Auth0Storage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +108,8 @@
 		5F46A66F1B50669400B974B8 /* ProfileSample */ = {
 			isa = PBXGroup;
 			children = (
+				5F748DC51B59A2F1005ED545 /* Storage.swift */,
+				5F748DC61B59A2F1005ED545 /* TokenRefresh.swift */,
 				5F46A6701B50669400B974B8 /* AppDelegate.swift */,
 				5F46A6711B50669400B974B8 /* Application.swift */,
 				5F46A6721B50669400B974B8 /* LaunchScreen.xib */,
@@ -158,25 +131,6 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
-		5FF44D711B3244820011AE71 /* Auth0Storage */ = {
-			isa = PBXGroup;
-			children = (
-				5FB8ED661AFA996800BC8655 /* Storage.swift */,
-				5F60D8A81B39EB41004A8135 /* TokenRefresh.swift */,
-				5FF44D741B3244820011AE71 /* Auth0Storage.h */,
-				5FF44D721B3244820011AE71 /* Supporting Files */,
-			);
-			path = Auth0Storage;
-			sourceTree = "<group>";
-		};
-		5FF44D721B3244820011AE71 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5FF44D731B3244820011AE71 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		F14E98E0BBCD2E770A2436F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,17 +143,6 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		5FF44D6D1B3244810011AE71 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF44D751B3244820011AE71 /* Auth0Storage.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5F2901511AF817A1005A506F /* Profile Sample */ = {
@@ -217,32 +160,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				5FF44D861B3244820011AE71 /* PBXTargetDependency */,
 			);
 			name = "Profile Sample";
 			productName = SwiftSample;
 			productReference = 5F2901521AF817A1005A506F /* Profile Sample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5FF44D6F1B3244810011AE71 /* Auth0Storage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF44D8D1B3244820011AE71 /* Build configuration list for PBXNativeTarget "Auth0Storage" */;
-			buildPhases = (
-				9474885F1D6E3D31FEF0DE7B /* Check Pods Manifest.lock */,
-				5FF44D6B1B3244810011AE71 /* Sources */,
-				5FF44D6C1B3244810011AE71 /* Frameworks */,
-				5FF44D6D1B3244810011AE71 /* Headers */,
-				5FF44D6E1B3244810011AE71 /* Resources */,
-				FEE65ED26AB9180771F68CF6 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Auth0Storage;
-			productName = Auth0Storage;
-			productReference = 5FF44D701B3244820011AE71 /* Auth0Storage.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -255,9 +177,6 @@
 				TargetAttributes = {
 					5F2901511AF817A1005A506F = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					5FF44D6F1B3244810011AE71 = {
-						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -275,7 +194,6 @@
 			projectRoot = "";
 			targets = (
 				5F2901511AF817A1005A506F /* Profile Sample */,
-				5FF44D6F1B3244810011AE71 /* Auth0Storage */,
 			);
 		};
 /* End PBXProject section */
@@ -288,13 +206,6 @@
 				5F46A6811B50669400B974B8 /* Images.xcassets in Resources */,
 				5F46A67F1B50669400B974B8 /* LaunchScreen.xib in Resources */,
 				5F46A6801B50669400B974B8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF44D6E1B3244810011AE71 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,21 +242,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Profile Sample/Pods-Profile Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9474885F1D6E3D31FEF0DE7B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		DE0A289E369C556DB6813361 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,21 +257,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FEE65ED26AB9180771F68CF6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auth0Storage/Pods-Auth0Storage-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -387,28 +268,13 @@
 				5F46A6831B50669400B974B8 /* ProfileViewController.swift in Sources */,
 				5F46A67E1B50669400B974B8 /* Application.swift in Sources */,
 				5F46A67D1B50669400B974B8 /* AppDelegate.swift in Sources */,
+				5F748DC81B59A2F1005ED545 /* TokenRefresh.swift in Sources */,
 				5F46A6851B50669400B974B8 /* UserProfile+UserMetadata.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FF44D6B1B3244810011AE71 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FF44D8F1B3244980011AE71 /* Storage.swift in Sources */,
-				5F60D8A91B39EB41004A8135 /* TokenRefresh.swift in Sources */,
+				5F748DC71B59A2F1005ED545 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5FF44D861B3244820011AE71 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5FF44D6F1B3244810011AE71 /* Auth0Storage */;
-			targetProxy = 5FF44D851B3244820011AE71 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5F46A6721B50669400B974B8 /* LaunchScreen.xib */ = {
@@ -538,50 +404,6 @@
 			};
 			name = Release;
 		};
-		5FF44D891B3244820011AE71 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88CAAC122440CE8BFAE7214A /* Pods-Auth0Storage.debug.xcconfig */;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Auth0Storage/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5FF44D8A1B3244820011AE71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96DF9A9C0B51A8BE07CB9791 /* Pods-Auth0Storage.release.xcconfig */;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Auth0Storage/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -599,15 +421,6 @@
 			buildConfigurations = (
 				5F2901721AF817A1005A506F /* Debug */,
 				5F2901731AF817A1005A506F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5FF44D8D1B3244820011AE71 /* Build configuration list for PBXNativeTarget "Auth0Storage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5FF44D891B3244820011AE71 /* Debug */,
-				5FF44D8A1B3244820011AE71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
