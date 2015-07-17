@@ -63,8 +63,8 @@ class ProfileViewController: UIViewController {
     func keyboardShown(notification: NSNotification) {
         let info = notification.userInfo!
         self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        let offset = self.offsetForFrame(self.birthday.frame, keyboardFrame: self.keyboardFrame!)
-        self.containerHeight.constant = 600 + offset + 100
+        self.keyboardFrame = self.view.convertRect(self.keyboardFrame!, fromView: nil)
+        self.containerHeight.constant = 600 + self.keyboardFrame!.size.height
         if let field = self.currentField {
             self.scrollToField(field, keyboardFrame: self.keyboardFrame!)
         }
