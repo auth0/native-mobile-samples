@@ -86,31 +86,30 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - Lock (1.15.0):
+  - Lock (1.15.1):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
-    - Lock/Core (= 1.15.0)
-    - Lock/UI (= 1.15.0)
-    - Lock/WebView (= 1.15.0)
+    - Lock/Core (= 1.15.1)
+    - Lock/UI (= 1.15.1)
+    - Lock/WebView (= 1.15.1)
   - Lock-Facebook (2.0.1):
     - CocoaLumberjack (~> 2.0)
     - FBSDKCoreKit (~> 4.0)
     - FBSDKLoginKit (~> 4.0)
     - Lock/Core (~> 1.11)
-  - Lock/Core (1.15.0):
+  - Lock/Core (1.15.1):
     - AFNetworking (~> 2.5)
     - CocoaLumberjack (~> 2.0)
     - ISO8601DateFormatter (~> 0.7)
     - libextobjc (~> 0.4)
-  - Lock/UI (1.15.0):
+  - Lock/UI (1.15.1):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/Core
-  - Lock/WebView (1.15.0):
+  - Lock/WebView (1.15.1):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/Core
-    - Lock/UI
   - MBProgressHUD (0.9.1)
   - SimpleKeychain (0.4.0)
 
@@ -120,7 +119,6 @@ DEPENDENCIES:
   - JWTDecode (~> 0.3)
   - Lock (~> 1.14)
   - Lock-Facebook (~> 2.0)
-  - Lock/Core (~> 1.14)
   - MBProgressHUD (~> 0.9.1)
   - SimpleKeychain (~> 0.4)
 
@@ -135,7 +133,7 @@ SPEC CHECKSUMS:
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   JWTDecode: aa1b0f6270c08d9283f720ffe2b1fd98428023e7
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  Lock: 6479e19d31bdf22064ea0909727322c1f2e8091a
+  Lock: b4e383b63bbbebad315cd65076dfbe5cb2bb0f63
   Lock-Facebook: 02c315b7d15d6fed20c7a2ea8a5e5e27c072483a
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SimpleKeychain: ed7fcbc2a235ad6919a3d2385ed4b44ab866d874

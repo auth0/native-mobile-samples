@@ -12,9 +12,3 @@ target 'Profile Sample' do
   pod 'Auth0', '~> 0.1'
   pod 'MBProgressHUD', '~> 0.9.1'
 end
-
-target 'Auth0Storage' do
-  pod 'Lock/Core', '~> 1.14'
-  pod 'SimpleKeychain', '~> 0.4'
-  pod 'JWTDecode', '~> 0.3'
-end
