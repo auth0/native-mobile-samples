@@ -17,3 +17,5 @@ Once you have that, just clone the project and run the following:
 2. `open Profile\ Sample.xcworkspace`
 
 Enjoy your iOS app now :).
+
+![Profile Sample](https://cdn.auth0.com/mobile-sdk-lock/profile-ios-swift.gif)
