@@ -23,7 +23,6 @@
 import Foundation
 import Lock
 import LockFacebook
-import Auth0Storage
 
 internal struct Application {
 

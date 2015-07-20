@@ -24,7 +24,6 @@
 import UIKit
 import Lock
 import SimpleKeychain
-import Auth0Storage
 
 enum SessionNotification: String {
     case Start = "StartSession"
