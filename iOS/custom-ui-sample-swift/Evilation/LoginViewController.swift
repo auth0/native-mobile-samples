@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Colours
 import Lock
 import MBProgressHUD
 
@@ -54,10 +53,14 @@ class LoginViewController: UIViewController {
         let lock = Evilation.sharedInstance.lock
         let client = lock.apiClient()
         let parameters = A0AuthParameters(dictionary: [A0ParameterConnection : "Username-Password-Authentication"])
-        client.loginWithUsername(self.emailField.text, password: self.passwordField.text, parameters: parameters, success: { (profile, token) -> Void in
-            println("Logged in user \(profile.name)")
-            hud.hide(true)
-        }, failure: self.errorCallback(hud))
+        client.loginWithUsername(self.emailField.text,
+            password: self.passwordField.text,
+            parameters: parameters,
+            success: { profile, token in
+                println("Logged in user \(profile.name)")
+                hud.hide(true)
+            },
+            failure: self.errorCallback(hud))
     }
 
     @IBAction func loginSocial(sender: AnyObject) {
