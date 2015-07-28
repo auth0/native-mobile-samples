@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Evilation</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="password_placeholder">Password</string>
+    <string name="email_placeholder">E-Mail</string>
+    <string name="username_password_header">CONNECT WITH YOUR E-MAIL</string>
+    <string name="separator">OR</string>
+    <string name="facebook_button">CONNECT WITH FACEBOOK</string>
+    <string name="twitter_button">CONNECT WITH TWITTER</string>
+    <string name="login_failed_title">Failed to login with Auth0</string>
+    <string name="login_failed_message">Check your device log for more information</string>
+</resources>

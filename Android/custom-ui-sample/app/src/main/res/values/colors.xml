@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="evilation_black">#222228</color>
+    <color name="evilation_green">#50E3C2</color>
+    <color name="evilation_login_box_white">#1dffffff</color>
+    <color name="evilation_login_foreground_white">#33ffffff</color>
+    <color name="evilation_login_button_normal">#50E3C2</color>
+    <color name="evilation_login_button_highlighted">#537F76</color>
+    <color name="evilation_login_button_pressed">#48CCAE</color>
+    <color name="evilation_twitter">#55ACEE</color>
+    <color name="evilation_facebook">#3B5998</color>
+</resources>

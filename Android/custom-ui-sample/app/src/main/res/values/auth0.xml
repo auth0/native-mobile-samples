@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth0_client_id">{CLIENT_ID}</string>
+    <string name="auth0_domain_name">{DOMAIN}</string>
+    <string name="auth0_scheme">{MOBILE_CUSTOM_SCHEME}</string>
+    <string name="facebook_app_id">696506353719958</string>
+</resources>
