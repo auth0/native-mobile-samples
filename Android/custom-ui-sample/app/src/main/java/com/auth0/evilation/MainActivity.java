@@ -18,6 +18,7 @@ import com.auth0.api.APIClient;
 import com.auth0.api.callback.AuthenticationCallback;
 import com.auth0.api.callback.BaseCallback;
 import com.auth0.core.Auth0;
+import com.auth0.core.Strategies;
 import com.auth0.core.Token;
 import com.auth0.core.UserProfile;
 import com.auth0.facebook.FacebookIdentityProvider;
@@ -81,7 +82,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 progress = ProgressDialog.show(MainActivity.this, null, null, true);
                 identity = webProvider;
-                identity.start(MainActivity.this, "twitter");
+                identity.start(MainActivity.this, Strategies.Twitter.getName());
             }
         });
         Button facebookButton = (Button) findViewById(R.id.login_facebook_button);
@@ -90,7 +91,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 progress = ProgressDialog.show(MainActivity.this, null, null, true);
                 identity = facebook;
-                identity.start(MainActivity.this, "facebook");
+                identity.start(MainActivity.this, Strategies.Facebook.getName());
             }
         });
     }

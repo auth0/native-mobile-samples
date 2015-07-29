@@ -21,7 +21,6 @@ public class EventBusIdentityProviderCallback implements IdentityProviderCallbac
         this.client = client;
     }
 
-
     @Override
     public void onFailure(Dialog dialog) {
         bus.post(new ErrorEvent(dialog));
