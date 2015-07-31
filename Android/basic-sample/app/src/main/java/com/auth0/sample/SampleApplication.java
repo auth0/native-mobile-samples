@@ -41,10 +41,10 @@ public class SampleApplication extends Application implements LockProvider {
     @Override
     public void onCreate() {
         super.onCreate();
-        lock = new LockBuilder()
+        lock = new Lock.Builder()
                 .loadFromApplication(this)
+                .withIdentityProvider(Strategies.Facebook, new FacebookIdentityProvider(this))
                 .build();
-        lock.setProvider(Strategies.Facebook.getName(), new FacebookIdentityProvider());
         ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(configuration);
     }
