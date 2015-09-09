@@ -1,4 +1,4 @@
-// AppDelegate.h
+// Application.h
 //
 // Copyright (c) 2014 Auth0 (http://auth0.com)
 //
@@ -20,10 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "RCTBridgeModule.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (nonatomic, strong) UIWindow *window;
+@interface LockReactModule : NSObject<RCTBridgeModule>
 
 @end

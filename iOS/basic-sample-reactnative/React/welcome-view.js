@@ -9,7 +9,7 @@ var {
   TouchableHighlight,
 } = React;
 
-var Lock = require('NativeModules').LockReact;
+var Lock = require('NativeModules').LockReactModule;
 
 var ProfileView = require('./profile-view');
 

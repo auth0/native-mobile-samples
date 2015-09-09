@@ -1,4 +1,4 @@
-// AppDelegate.h
+// Application.m
 //
 // Copyright (c) 2014 Auth0 (http://auth0.com)
 //
@@ -20,10 +20,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "LockReactModule.h"
+#import <LockReact/A0LockReact.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@implementation LockReactModule
 
-@property (nonatomic, strong) UIWindow *window;
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(show:(NSDictionary *)options callback:(RCTResponseSenderBlock)callback) {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    A0LockReact *lock = [A0LockReact sharedInstance];
+    [lock showWithOptions:options callback:callback];
+  });
+}
+
+RCT_EXPORT_METHOD(showSMS:(NSDictionary *)options callback:(RCTResponseSenderBlock)callback) {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    A0LockReact *lock = [A0LockReact sharedInstance];
+    [lock showSMSWithOptions:options callback:callback];
+  });
+}
+
+RCT_EXPORT_METHOD(showTouchID:(NSDictionary *)options callback:(RCTResponseSenderBlock)callback) {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    A0LockReact *lock = [A0LockReact sharedInstance];
+    [lock showTouchIDWithOptions:options callback:callback];
+  });
+}
 
 @end
