@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 #import "RCTRootView.h"
+#import <LockReact/A0LockReact.h>
 
 @implementation AppDelegate
 
@@ -17,6 +18,9 @@
 {
   NSURL *jsCodeLocation;
 
+  // Configuring Lock with values from the Info.plist
+  [[A0LockReact sharedInstance] configureLockFromBundle];
+  
   // Loading JavaScript code - uncomment the one you want.
 
   // OPTION 1

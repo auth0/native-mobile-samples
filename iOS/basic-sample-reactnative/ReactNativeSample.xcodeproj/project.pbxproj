@@ -12,6 +12,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		8EB151F41BA02F010089AF78 /* LockReactModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB151F21BA02F010089AF78 /* LockReactModule.m */; };
 		E8321917C75397BB7174C9DD /* libPods-ReactNativeSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5482BB8334684266C6C576 /* libPods-ReactNativeSample.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
 		6F5482BB8334684266C6C576 /* libPods-ReactNativeSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7843F347EEFF6169AEFF256F /* Pods-ReactNativeSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeSample/Pods-ReactNativeSample.release.xcconfig"; sourceTree = "<group>"; };
+		8EB151F21BA02F010089AF78 /* LockReactModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LockReactModule.m; path = iOS/LockReactModule.m; sourceTree = "<group>"; };
+		8EB151F31BA02F010089AF78 /* LockReactModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LockReactModule.h; path = iOS/LockReactModule.h; sourceTree = "<group>"; };
 		F3FE5507D0D1EF082842EC12 /* Pods-ReactNativeSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeSample/Pods-ReactNativeSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +55,8 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeSample */ = {
 			isa = PBXGroup;
 			children = (
+				8EB151F21BA02F010089AF78 /* LockReactModule.m */,
+				8EB151F31BA02F010089AF78 /* LockReactModule.h */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -193,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				8EB151F41BA02F010089AF78 /* LockReactModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
