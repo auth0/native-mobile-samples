@@ -1,10 +1,24 @@
+// LoginViewController.swift
 //
-//  LoginViewController.swift
-//  Evilation
+// Copyright (c) 2014 Auth0 (http://auth0.com)
 //
-//  Created by Hernan Zalazar on 7/21/15.
-//  Copyright (c) 2015 Auth0. All rights reserved.
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 import UIKit
 import Lock
@@ -53,11 +67,15 @@ class LoginViewController: UIViewController {
         let lock = Evilation.sharedInstance.lock
         let client = lock.apiClient()
         let parameters = A0AuthParameters(dictionary: [A0ParameterConnection : "Username-Password-Authentication"])
-        client.loginWithUsername(self.emailField.text,
-            password: self.passwordField.text,
+        guard let email = self.emailField.text, let password = self.passwordField.text else {
+            print("Either email or password are nil")
+            return
+        }
+        client.loginWithUsername(email,
+            password: password,
             parameters: parameters,
             success: { profile, token in
-                println("Logged in user \(profile.name)")
+                print("Logged in user \(profile.name)")
                 hud.hide(true)
             },
             failure: self.errorCallback(hud))
@@ -92,7 +110,7 @@ class LoginViewController: UIViewController {
                     dy = -parentFrame.origin.y
                 }
                 let frame = CGRectOffset(parentFrame, 0, dy)
-                UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions(animationCurve), animations: { () -> Void in
+                UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions(rawValue: animationCurve), animations: { () -> Void in
                     self.view.superview!.frame = frame
                     }, completion: nil)
 
@@ -101,21 +119,21 @@ class LoginViewController: UIViewController {
 
     private func errorCallback(hud: MBProgressHUD) -> NSError -> () {
         return { error in
-            var alert = UIAlertController(title: "Login failed", message: "Please check you application logs for more info", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Login failed", message: "Please check you application logs for more info", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
-            println("Failed with error \(error)")
+            print("Failed with error \(error)")
             hud.hide(true)
         }
     }
 
     private func successCallback(hud: MBProgressHUD) -> (A0UserProfile, A0Token) -> () {
         return { (profile, token) -> Void in
-            var alert = UIAlertController(title: "Logged In!", message: "User with name \(profile.name) logged in!", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Logged In!", message: "User with name \(profile.name) logged in!", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
-            println("Logged in user \(profile.name)")
-            println("Tokens: \(token)")
+            print("Logged in user \(profile.name)")
+            print("Tokens: \(token)")
             hud.hide(true)
         }
     }

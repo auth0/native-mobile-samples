@@ -31,8 +31,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let keychain = MyApplication.sharedInstance.keychain
         let idToken = keychain.stringForKey("id_token")
-        if (idToken != nil) {
-            if (JWTDecode.expired(jwt: idToken)) {
+        if let jwt = try? JWTDecode.decode(idToken) {
+            if (jwt.expired) {
                 let refreshToken = keychain.stringForKey("refresh_token")
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 let success = {(token:A0Token!) -> () in
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
         authController.closable = true
         authController.onAuthenticationBlock = { (profile, token) -> () in
             switch (profile, token) {
-            case let (.Some(profile), .Some(token)):
+            case (.Some(let profile), .Some(let token)):
                 let keychain = MyApplication.sharedInstance.keychain
                 keychain.setString(token.idToken, forKey: "id_token")
                 keychain.setString(token.refreshToken, forKey: "refresh_token")
@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
                 self.performSegueWithIdentifier("showProfile", sender: self)
             default:
-                println("User SignedUp without loggin in")
+                print("User SignedUp without loggin in")
             }
         }
         self.presentViewController(authController, animated: true, completion: nil)

@@ -11,7 +11,6 @@
 		5F9FE5ED1B5E95DF00AA80F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9FE5EC1B5E95DF00AA80F9 /* LoginViewController.swift */; };
 		5F9FE5EF1B5EA9F400AA80F9 /* Evilation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9FE5EE1B5EA9F400AA80F9 /* Evilation.swift */; };
 		5FC934081B5D4D0800EBCB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC934071B5D4D0800EBCB74 /* AppDelegate.swift */; };
-		5FC9340A1B5D4D0800EBCB74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC934091B5D4D0800EBCB74 /* ViewController.swift */; };
 		5FC9340D1B5D4D0800EBCB74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9340B1B5D4D0800EBCB74 /* Main.storyboard */; };
 		5FC9340F1B5D4D0800EBCB74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9340E1B5D4D0800EBCB74 /* Images.xcassets */; };
 		5FC934121B5D4D0800EBCB74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC934101B5D4D0800EBCB74 /* LaunchScreen.xib */; };
@@ -24,7 +23,6 @@
 		5FC934021B5D4D0800EBCB74 /* Evilation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC934061B5D4D0800EBCB74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC934071B5D4D0800EBCB74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5FC934091B5D4D0800EBCB74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5FC9340C1B5D4D0800EBCB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FC9340E1B5D4D0800EBCB74 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5FC934111B5D4D0800EBCB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				5FC934071B5D4D0800EBCB74 /* AppDelegate.swift */,
-				5FC934091B5D4D0800EBCB74 /* ViewController.swift */,
 				5FC9340B1B5D4D0800EBCB74 /* Main.storyboard */,
 				5FC9340E1B5D4D0800EBCB74 /* Images.xcassets */,
 				5FC934101B5D4D0800EBCB74 /* LaunchScreen.xib */,
@@ -131,7 +128,8 @@
 		5FC933FA1B5D4D0800EBCB74 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Auth0;
 				TargetAttributes = {
 					5FC934011B5D4D0800EBCB74 = {
@@ -226,7 +224,6 @@
 			files = (
 				5F9FE5ED1B5E95DF00AA80F9 /* LoginViewController.swift in Sources */,
 				5F9FE5EF1B5EA9F400AA80F9 /* Evilation.swift in Sources */,
-				5FC9340A1B5D4D0800EBCB74 /* ViewController.swift in Sources */,
 				5FC934081B5D4D0800EBCB74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +271,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -344,6 +342,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Evilation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.auth0.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -356,6 +355,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Evilation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.auth0.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
