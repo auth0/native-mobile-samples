@@ -5,5 +5,6 @@ target 'ReactNativeSample' do
   pod 'React'
   pod 'React/RCTText'
   pod 'React/RCTImage'
+  pod 'React/RCTWebSocket'
 end
 

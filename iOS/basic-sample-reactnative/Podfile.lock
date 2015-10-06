@@ -1,32 +1,32 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking/NSURLConnection (2.6.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
+  - AFNetworking/NSURLSession (2.6.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (2.0.0):
-    - CocoaLumberjack/Default (= 2.0.0)
-    - CocoaLumberjack/Extensions (= 2.0.0)
-  - CocoaLumberjack/Core (2.0.0)
-  - CocoaLumberjack/Default (2.0.0):
+  - CocoaLumberjack (2.0.1):
+    - CocoaLumberjack/Default (= 2.0.1)
+    - CocoaLumberjack/Extensions (= 2.0.1)
+  - CocoaLumberjack/Core (2.0.1)
+  - CocoaLumberjack/Default (2.0.1):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.0):
+  - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
   - ISO8601DateFormatter (0.7)
   - libextobjc (0.4.1):
@@ -64,25 +64,29 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - Lock/Core (1.13.0):
+  - Lock/Core (1.19.0):
     - AFNetworking (~> 2.5)
-    - CocoaLumberjack (~> 2.0.0-rc)
+    - CocoaLumberjack (~> 2.0)
     - ISO8601DateFormatter (~> 0.7)
     - libextobjc (~> 0.4)
-  - Lock/SMS (1.13.0):
-    - CocoaLumberjack (~> 2.0.0-rc)
+  - Lock/CoreUI (1.19.0):
+    - CocoaLumberjack (~> 2.0)
+    - libextobjc (~> 0.4)
+    - Lock/Core
+  - Lock/SMS (1.19.0):
+    - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/UI
-  - Lock/TouchID (1.13.0):
-    - CocoaLumberjack (~> 2.0.0-rc)
+  - Lock/TouchID (1.19.0):
+    - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/UI
     - SimpleKeychain (~> 0.2)
     - TouchIDAuth (~> 0.1)
-  - Lock/UI (1.13.0):
-    - CocoaLumberjack (~> 2.0.0-rc)
+  - Lock/UI (1.19.0):
+    - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
-    - Lock/Core
+    - Lock/CoreUI
   - LockReact/Core (0.4.1):
     - Lock/SMS
     - Lock/TouchID
@@ -90,14 +94,19 @@ PODS:
   - LockReact/NativeModule (0.4.1):
     - LockReact/Core
     - React/Core
-  - React (0.4.4):
-    - React/Core (= 0.4.4)
-  - React/Core (0.4.4)
-  - React/RCTImage (0.4.4):
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
+  - React/RCTImage (0.11.0):
     - React/Core
-  - React/RCTText (0.4.4):
+    - React/RCTNetwork
+  - React/RCTNetwork (0.11.0):
     - React/Core
-  - SimpleKeychain (0.4.0)
+  - React/RCTText (0.11.0):
+    - React/Core
+  - React/RCTWebSocket (0.11.0):
+    - React/Core
+  - SimpleKeychain (0.5.0)
   - TouchIDAuth (0.1.1):
     - libextobjc (~> 0.4)
     - SimpleKeychain (~> 0.3)
@@ -107,16 +116,17 @@ DEPENDENCIES:
   - React
   - React/RCTImage
   - React/RCTText
+  - React/RCTWebSocket
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  Lock: 79ac2d131f94f1b5eae89a205059aa4464369427
+  Lock: 858f80a2708b1e13833d186db0c3456db360f635
   LockReact: cdd1c74bcd1f718905c69d027709fc50774941eb
-  React: 17e9803c4b69fd65c58e62db7d6960da5d3c261e
-  SimpleKeychain: ed7fcbc2a235ad6919a3d2385ed4b44ab866d874
+  React: 7701ff0adcaadbf8fa5514778c2ee41b2622cd57
+  SimpleKeychain: ae04c7ca6a960a146081010b412cf0ba2ecb10fe
   TouchIDAuth: f63596baf1c23d85211ab7a3b4bea794d73f3e36
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2
