@@ -20,12 +20,12 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts (1.2.2):
-    - Bolts/AppLinks (= 1.2.2)
-    - Bolts/Tasks (= 1.2.2)
-  - Bolts/AppLinks (1.2.2):
+  - Bolts (1.3.0):
+    - Bolts/AppLinks (= 1.3.0)
+    - Bolts/Tasks (= 1.3.0)
+  - Bolts/AppLinks (1.3.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.2.2)
+  - Bolts/Tasks (1.3.0)
   - CocoaLumberjack (2.0.1):
     - CocoaLumberjack/Default (= 2.0.1)
     - CocoaLumberjack/Extensions (= 2.0.1)
@@ -34,16 +34,16 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
-  - FBSDKCoreKit (4.6.0):
+  - FBSDKCoreKit (4.7.0):
     - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.6.0)
-    - FBSDKCoreKit/no-arc (= 4.6.0)
-  - FBSDKCoreKit/arc (4.6.0):
+    - FBSDKCoreKit/arc (= 4.7.0)
+    - FBSDKCoreKit/no-arc (= 4.7.0)
+  - FBSDKCoreKit/arc (4.7.0):
     - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.6.0):
+  - FBSDKCoreKit/no-arc (4.7.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.6.0):
+  - FBSDKLoginKit (4.7.0):
     - FBSDKCoreKit
   - ISO8601DateFormatter (0.7)
   - JWTDecode (1.0.0)
@@ -82,31 +82,31 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - Lock (1.18.0):
+  - Lock (1.19.2):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
-    - Lock/Core (= 1.18.0)
-    - Lock/UI (= 1.18.0)
-    - Lock/WebView (= 1.18.0)
+    - Lock/Core (= 1.19.2)
+    - Lock/UI (= 1.19.2)
+    - Lock/WebView (= 1.19.2)
   - Lock-Facebook (2.2.0):
     - CocoaLumberjack (~> 2.0)
     - FBSDKCoreKit (~> 4.6)
     - FBSDKLoginKit (~> 4.6)
     - Lock/Core (~> 1.11)
-  - Lock/Core (1.18.0):
+  - Lock/Core (1.19.2):
     - AFNetworking (~> 2.5)
     - CocoaLumberjack (~> 2.0)
     - ISO8601DateFormatter (~> 0.7)
     - libextobjc (~> 0.4)
-  - Lock/CoreUI (1.18.0):
+  - Lock/CoreUI (1.19.2):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/Core
-  - Lock/UI (1.18.0):
+  - Lock/UI (1.19.2):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/CoreUI
-  - Lock/WebView (1.18.0):
+  - Lock/WebView (1.19.2):
     - CocoaLumberjack (~> 2.0)
     - libextobjc (~> 0.4)
     - Lock/CoreUI
@@ -122,14 +122,14 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
+  Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
-  FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
-  FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
+  FBSDKCoreKit: eb580bfc2040ad44f4c0b4f4d0befb1d35bce59c
+  FBSDKLoginKit: 01bce8dd3f3a26a023b0ba4ffdde7ef5062889fe
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  Lock: 74df3917e300de2d2accddf4d8dfcc1c72e683cf
+  Lock: da94a6916dd22673e975e3974cb6ce03d89d905d
   Lock-Facebook: 36e982eb8221dd07fcc9770781e3fc6363be28d3
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SimpleKeychain: ae04c7ca6a960a146081010b412cf0ba2ecb10fe
