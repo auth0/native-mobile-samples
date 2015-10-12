@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let keychain = MyApplication.sharedInstance.keychain
         let idToken = keychain.stringForKey("id_token")
-        if let jwt = try? JWTDecode.decode(idToken) where idToken != nil {
+        if idToken != nil, let jwt = try? JWTDecode.decode(idToken) {
             if (jwt.expired) {
                 let refreshToken = keychain.stringForKey("refresh_token")
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
