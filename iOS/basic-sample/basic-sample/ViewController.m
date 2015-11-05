@@ -24,7 +24,6 @@
 #import "Application.h"
 
 #import <Lock/Lock.h>
-#import <libextobjc/EXTScope.h>
 #import <JWTDecode/A0JWTDecoder.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SimpleKeychain/A0SimpleKeychain.h>
@@ -42,16 +41,13 @@
     if (idToken) {
         if ([A0JWTDecoder isJWTExpired:idToken]) {
             NSString *refreshToken = [store stringForKey:@"refresh_token"];
-            @weakify(self);
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             A0APIClient *client = [[[Application sharedInstance] lock] apiClient];
             [client fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
-                @strongify(self);
                 [store setString:token.idToken forKey:@"id_token"];
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [self performSegueWithIdentifier:@"showProfile" sender:self];
             } failure:^(NSError *error) {
-                @strongify(self);
                 [store clearAll];
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             }];
@@ -65,9 +61,7 @@
     A0Lock *lock = [[Application sharedInstance] lock];
     A0LockViewController *controller = [lock newLockViewController];
     controller.closable = true;
-    @weakify(self);
     controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
-        @strongify(self);
         
         A0SimpleKeychain *keychain = [Application sharedInstance].store;
         [keychain setString:token.idToken forKey:@"id_token"];

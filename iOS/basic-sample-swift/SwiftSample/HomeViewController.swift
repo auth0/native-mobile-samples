@@ -30,10 +30,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let keychain = MyApplication.sharedInstance.keychain
-        let idToken = keychain.stringForKey("id_token")
-        if idToken != nil, let jwt = try? JWTDecode.decode(idToken) {
-            if (jwt.expired) {
-                let refreshToken = keychain.stringForKey("refresh_token")
+        if let idToken = keychain.stringForKey("id_token"), let jwt = try? JWTDecode.decode(idToken) {
+            if jwt.expired, let refreshToken = keychain.stringForKey("refresh_token") {
+
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 let success = {(token:A0Token!) -> () in
                     keychain.setString(token.idToken, forKey: "id_token")
@@ -61,7 +60,9 @@ class HomeViewController: UIViewController {
             case (.Some(let profile), .Some(let token)):
                 let keychain = MyApplication.sharedInstance.keychain
                 keychain.setString(token.idToken, forKey: "id_token")
-                keychain.setString(token.refreshToken, forKey: "refresh_token")
+                if let refreshToken = token.refreshToken {
+                    keychain.setString(refreshToken, forKey: "refresh_token")
+                }
                 keychain.setData(NSKeyedArchiver.archivedDataWithRootObject(profile), forKey: "profile")
                 self.dismissViewControllerAnimated(true, completion: nil)
                 self.performSegueWithIdentifier("showProfile", sender: self)

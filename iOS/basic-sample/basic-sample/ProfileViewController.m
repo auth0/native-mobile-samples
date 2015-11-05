@@ -26,7 +26,6 @@
 #import <SimpleKeychain/A0SimpleKeychain.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
-#import <libextobjc/EXTScope.h>
 
 @interface ProfileViewController ()
 
@@ -50,12 +49,9 @@
 - (void)callAPI:(id)sender {
     NSURLRequest *request = [self buildAPIRequest];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    @weakify(self);
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        @strongify(self);
         [self showMessage:@"We got the secured data successfully"];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        @strongify(self);
         [self showMessage:@"Please download the API seed so that you can call it."];
     }];
     [operation start];

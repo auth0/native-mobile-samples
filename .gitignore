@@ -27,6 +27,7 @@ profile
 DerivedData
 *.hmap
 *.ipa
+*.xcscmblueprint
 
 # Bundler
 .bundle
@@ -34,6 +35,9 @@ DerivedData
 # CocoaPods
 examples/**/Pods/
 **/Pods/
+
+#Auth0
+Auth0.plist
 
 # Fabric
 .fabric_key

@@ -22,19 +22,20 @@
 
 import UIKit
 import Lock
+import AFNetworking
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet var profileImage: UIImageView?
-    @IBOutlet var welcomeLabel: UILabel?
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var welcomeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let keychain = MyApplication.sharedInstance.keychain
         let profileData:NSData! = keychain.dataForKey("profile")
         let profile:A0UserProfile = NSKeyedUnarchiver.unarchiveObjectWithData(profileData) as! A0UserProfile
-        self.profileImage?.setImageWithURL(profile.picture)
-        self.welcomeLabel?.text = "Welcome \(profile.name)!"
+        self.profileImage.setImageWithURL(profile.picture)
+        self.welcomeLabel.text = "Welcome \(profile.name)!"
     }
 
     @IBAction func callAPI(sender: AnyObject) {
