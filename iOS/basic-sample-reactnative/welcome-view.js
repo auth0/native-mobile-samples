@@ -8,10 +8,10 @@ var {
   Image,
   TouchableHighlight,
 } = React;
-
-var Lock = require('NativeModules').LockReactModule;
-
+var Auth0Lock = require('react-native-lock-ios');
 var ProfileView = require('./profile-view');
+
+var lock = new Auth0Lock();
 
 var WelcomeView = React.createClass({
   render: function() {
@@ -35,7 +35,7 @@ var WelcomeView = React.createClass({
     );
   },
   _onLogin: function() {
-    Lock.show({
+    lock.show({
       closable: true,
     }, (err, profile, token) => {
       if (err) {
