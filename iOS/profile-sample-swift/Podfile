@@ -4,11 +4,11 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Profile Sample' do
-  pod 'Lock', '~> 1.14'
-  pod 'Lock-Facebook', '~> 2.0'
-  pod 'SimpleKeychain', '~> 0.4'
-  pod 'JWTDecode', '~> 0.3'
-  pod 'Alamofire', '~> 1.2'
-  pod 'Auth0', '~> 0.1'
+  pod 'Lock', '~> 1.21'
+  pod 'Lock-Facebook', '~> 2.2'
+  pod 'SimpleKeychain', '~> 0.6'
+  pod 'JWTDecode', '~> 1.0'
+  pod 'Alamofire', '~> 2.0'
+  pod 'Auth0', '~> 0.2'
   pod 'MBProgressHUD', '~> 0.9.1'
 end

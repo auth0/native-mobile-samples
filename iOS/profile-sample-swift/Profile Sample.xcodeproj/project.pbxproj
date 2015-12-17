@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E7190313E481D3CDFC06545 /* Pods_Profile_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9B5D265C5970C308FE8809 /* Pods_Profile_Sample.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E7190313E481D3CDFC06545 /* Pods_Profile_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9B5D265C5970C308FE8809 /* Pods_Profile_Sample.framework */; };
 		5F46A67D1B50669400B974B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A6701B50669400B974B8 /* AppDelegate.swift */; };
 		5F46A67E1B50669400B974B8 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F46A6711B50669400B974B8 /* Application.swift */; };
 		5F46A67F1B50669400B974B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F46A6721B50669400B974B8 /* LaunchScreen.xib */; };
@@ -172,7 +172,9 @@
 		5F29014A1AF817A1005A506F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Auth0;
 				TargetAttributes = {
 					5F2901511AF817A1005A506F = {
@@ -317,6 +319,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -386,6 +389,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ProfileSample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.auth0.profile-sample";
 				PRODUCT_NAME = "Profile Sample";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -400,6 +404,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ProfileSample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.auth0.profile-sample";
 				PRODUCT_NAME = "Profile Sample";
 			};
 			name = Release;
