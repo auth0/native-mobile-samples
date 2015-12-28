@@ -44,7 +44,7 @@ public class Storage {
             return keychain.stringForKey(IdTokenKey)
         }
         set {
-            keychain.setString(newValue, forKey: IdTokenKey)
+            keychain.setString(newValue!, forKey: IdTokenKey)
         }
     }
 
@@ -55,7 +55,7 @@ public class Storage {
     public var profile: A0UserProfile? {
         get {
             let data = keychain.dataForKey(ProfileKey)
-            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? A0UserProfile
+            return NSKeyedUnarchiver.unarchiveObjectWithData(data!) as? A0UserProfile
         }
         set {
             if let profile = newValue {
@@ -64,10 +64,10 @@ public class Storage {
         }
     }
 
-    public func save(#token: A0Token, profile: A0UserProfile) {
+    public func save(token token: A0Token, profile: A0UserProfile) {
         self.idToken = token.idToken
         self.profile = profile
-        keychain.setString(token.refreshToken, forKey: RefreshTokenKey)
+        keychain.setString(token.refreshToken!, forKey: RefreshTokenKey)
     }
 
     public func clear() {

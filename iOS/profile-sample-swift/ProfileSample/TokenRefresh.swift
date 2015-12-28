@@ -22,19 +22,25 @@ public class TokenRefresh: NSObject {
 
     public func refresh(callback: (error: NSError?, token: String?) -> ()) {
         if let jwt = storage.idToken {
-            if !JWTDecode.expired(jwt: jwt) {
-                callback(error: nil, token: storage.idToken)
-                return
+            do {
+                let jwtDecoded = try decode(jwt)
+                if !jwtDecoded.expired {
+                    callback(error: nil, token: storage.idToken)
+                    return
+                }
+                if let refreshToken = storage.refreshToken {
+                    client.fetchNewIdTokenWithRefreshToken(refreshToken, parameters: nil, success: { (token) -> () in
+                        callback(error: nil, token: token.idToken)
+                        }, failure: { (error) -> () in
+                            callback(error: error, token: nil)
+                    })
+                } else {
+                    callback(error: NSError(domain: "com.auth0.ios.refresh-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't find a refresh token in Token Storage", comment: "No refresh_token")]), token: nil)
+                }
+            } catch {
+                callback(error: NSError(domain: "com.auth0.ios.id-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't decode the id_token found in Token Storage", comment: "Error in  id_token")]), token: nil)
             }
-            if let refreshToken = storage.refreshToken {
-                client.fetchNewIdTokenWithRefreshToken(refreshToken, parameters: nil, success: { (token) -> () in
-                    callback(error: nil, token: token.idToken)
-                    }, failure: { (error) -> () in
-                        callback(error: error, token: nil)
-                })
-            } else {
-                callback(error: NSError(domain: "com.auth0.ios.refresh-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't find a refresh token in Token Storage", comment: "No refresh_token")]), token: nil)
-            }
+            
         } else {
             callback(error: NSError(domain: "com.auth0.ios.id-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't find an id_token in Token Storage", comment: "No id_token")]), token: nil)
         }

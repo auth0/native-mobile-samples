@@ -88,7 +88,7 @@ class ProfileViewController: UIViewController {
 
     @IBAction func nextField(sender: AnyObject) {
         let field = sender as! UITextField
-        let currentTag = field.tag
+        _ = field.tag
         var nextTag = field.tag + 1
         if !(600...603 ~= nextTag) {
             nextTag = 600
@@ -109,10 +109,10 @@ class ProfileViewController: UIViewController {
             Auth0
                 .users(idToken)
                 .update(userMetadata: [
-                    MetadataKeys.GivenName.rawValue: self.firstName.text,
-                    MetadataKeys.FamilyName.rawValue: self.lastName.text,
-                    MetadataKeys.Address.rawValue: self.address.text,
-                    MetadataKeys.Birthday.rawValue: self.birthday.text,
+                    MetadataKeys.GivenName.rawValue: self.firstName.text!,
+                    MetadataKeys.FamilyName.rawValue: self.lastName.text!,
+                    MetadataKeys.Address.rawValue: self.address.text!,
+                    MetadataKeys.Birthday.rawValue: self.birthday.text!,
                     ])
                 .responseJSON { _, profileJSON in
                     if profileJSON != nil {
