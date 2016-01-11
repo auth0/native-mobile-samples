@@ -67,7 +67,7 @@ class HomeViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
                 self.performSegueWithIdentifier("showProfile", sender: self)
             default:
-                print("User SignedUp without loggin in")
+                print("User signed up without logging in")
             }
         }
         self.presentViewController(authController, animated: true, completion: nil)
