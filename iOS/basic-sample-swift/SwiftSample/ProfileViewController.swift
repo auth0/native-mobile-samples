@@ -59,7 +59,7 @@ class ProfileViewController: UIViewController {
         let urlString = info["SampleAPIBaseURL"] as! String
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         let keychain = MyApplication.sharedInstance.keychain
-        let token = keychain.stringForKey("id_token")
+        let token = keychain.stringForKey("id_token")!
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
     }
