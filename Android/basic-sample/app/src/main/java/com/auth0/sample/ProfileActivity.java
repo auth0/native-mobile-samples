@@ -76,13 +76,13 @@ public class ProfileActivity extends ActionBarActivity {
     private void callAPI() {
         client.get(this, SAMPLE_API_URL, new AsyncHttpResponseHandler() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
                 Log.v(TAG, "We got the secured data successfully");
                 showAlertDialog(ProfileActivity.this, "We got the secured data successfully");
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
                 Log.e(TAG, "Failed to contact API", error);
                 showAlertDialog(ProfileActivity.this, "Please download the API seed so that you can call it.");
             }
