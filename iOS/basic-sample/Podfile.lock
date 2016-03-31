@@ -1,31 +1,25 @@
 PODS:
-  - AFNetworking (2.6.1):
-    - AFNetworking/NSURLConnection (= 2.6.1)
-    - AFNetworking/NSURLSession (= 2.6.1)
-    - AFNetworking/Reachability (= 2.6.1)
-    - AFNetworking/Security (= 2.6.1)
-    - AFNetworking/Serialization (= 2.6.1)
-    - AFNetworking/UIKit (= 2.6.1)
-  - AFNetworking/NSURLConnection (2.6.1):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.1)
-  - AFNetworking/Security (2.6.1)
-  - AFNetworking/Serialization (2.6.1)
-  - AFNetworking/UIKit (2.6.1):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Bolts (1.4.0):
-    - Bolts/AppLinks (= 1.4.0)
-    - Bolts/Tasks (= 1.4.0)
-  - Bolts/AppLinks (1.4.0):
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.4.0)
+  - Bolts/Tasks (1.7.0)
   - CocoaLumberjack (2.2.0):
     - CocoaLumberjack/Default (= 2.2.0)
     - CocoaLumberjack/Extensions (= 2.2.0)
@@ -34,60 +28,56 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
-  - FBSDKCoreKit (4.7.1):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.7.1)
-    - FBSDKCoreKit/no-arc (= 4.7.1)
-  - FBSDKCoreKit/arc (4.7.1):
-    - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.7.1):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.7.1):
+  - FBSDKCoreKit (4.10.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.1):
     - FBSDKCoreKit
   - JWTDecode (0.2.2)
-  - Lock (1.21.0):
+  - Lock (1.24.0):
     - CocoaLumberjack (~> 2.0)
-    - Lock/Core (= 1.21.0)
-    - Lock/UI (= 1.21.0)
-    - Lock/WebView (= 1.21.0)
+    - Lock/Core (= 1.24.0)
+    - Lock/UI (= 1.24.0)
+    - Lock/WebView (= 1.24.0)
   - Lock-Facebook (2.2.1):
     - CocoaLumberjack (~> 2.0)
     - FBSDKCoreKit (~> 4.6)
     - FBSDKLoginKit (~> 4.6)
     - Lock/Core (~> 1.11)
-  - Lock/Core (1.21.0):
-    - AFNetworking (~> 2.5)
+  - Lock/Core (1.24.0):
+    - AFNetworking (~> 3.0)
     - CocoaLumberjack (~> 2.0)
-  - Lock/CoreUI (1.21.0):
+  - Lock/CoreUI (1.24.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/Core
-  - Lock/UI (1.21.0):
+    - Masonry (~> 0.6)
+  - Lock/UI (1.24.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
-  - Lock/WebView (1.21.0):
+  - Lock/WebView (1.24.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
-  - MBProgressHUD (0.9.1)
-  - SimpleKeychain (0.6.1)
+  - Masonry (0.6.4)
+  - MBProgressHUD (0.9.2)
+  - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
   - JWTDecode (~> 0.2.0)
-  - Lock (~> 1.12)
+  - Lock (~> 1.24)
   - Lock-Facebook (~> 2.0)
   - MBProgressHUD (~> 0.9)
   - SimpleKeychain (~> 0.3)
 
 SPEC CHECKSUMS:
-  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
-  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
-  FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
   JWTDecode: c193d229af74dd72121515c976f930ccbed96a2a
-  Lock: cf46cea61023248b458662a9800a99c410a355f4
+  Lock: 7cf0fa326159270b7145b89666e321d22986fd06
   Lock-Facebook: 09f2397cbc9ae2e1fc654f7e66248da30343e349
-  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  SimpleKeychain: 150d76f3b9200de58f033228f6e976c6241a221c
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
 COCOAPODS: 0.39.0

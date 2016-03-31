@@ -40,13 +40,11 @@ class ProfileViewController: UIViewController {
 
     @IBAction func callAPI(sender: AnyObject) {
         let request = buildAPIRequest()
-        let operation = AFHTTPRequestOperation(request: request)
-        operation.setCompletionBlockWithSuccess({ (operation, responseObject) -> Void in
+        let manager = AFHTTPSessionManager()
+        manager.dataTaskWithRequest(request) { [unowned self] _, _, error in
+            guard let _ = error else { return self.showMessage("Please download the API seed so that you can call it.") }
             self.showMessage("We got the secured data successfully")
-        }, failure: { (operation, error) -> Void in
-            self.showMessage("Please download the API seed so that you can call it.")
-        })
-        operation.start()
+        }.resume()
     }
 
     private func showMessage(message: String) {

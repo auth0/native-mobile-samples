@@ -70,7 +70,7 @@
         [self dismissViewControllerAnimated:YES completion:nil];
         [self performSegueWithIdentifier:@"showProfile" sender:self];
     };
-    [self presentViewController:controller animated:YES completion:nil];
+    [lock presentLockController:controller fromController:self];
 }
 
 @end

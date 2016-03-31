@@ -24,7 +24,7 @@
 #import "Application.h"
 #import <Lock/Lock.h>
 #import <SimpleKeychain/A0SimpleKeychain.h>
-#import <AFNetworking/AFHTTPRequestOperation.h>
+#import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface ProfileViewController ()
@@ -48,13 +48,15 @@
 
 - (void)callAPI:(id)sender {
     NSURLRequest *request = [self buildAPIRequest];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self showMessage:@"We got the secured data successfully"];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self showMessage:@"Please download the API seed so that you can call it."];
-    }];
-    [operation start];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            [self showMessage:@"Please download the API seed so that you can call it."];
+        } else {
+            [self showMessage:@"We got the secured data successfully"];
+        }
+
+    }] resume];
 }
 
 - (void)showMessage:(NSString *)message {
