@@ -1,40 +1,36 @@
 package com.auth0.evilation;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.auth0.api.APIClient;
+import com.auth0.api.authentication.AuthenticationAPIClient;
 import com.auth0.api.callback.AuthenticationCallback;
-import com.auth0.api.callback.BaseCallback;
 import com.auth0.core.Auth0;
 import com.auth0.core.Strategies;
 import com.auth0.core.Token;
 import com.auth0.core.UserProfile;
 import com.auth0.facebook.FacebookIdentityProvider;
 import com.auth0.identity.IdentityProvider;
-import com.auth0.identity.IdentityProviderCallback;
 import com.auth0.identity.WebIdentityProvider;
 import com.auth0.identity.web.CallbackParser;
 
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getName();
 
-    private APIClient client;
+    private AuthenticationAPIClient client;
     private EventBus eventBus;
     private WebIdentityProvider webProvider;
     private FacebookIdentityProvider facebook;
@@ -47,7 +43,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Auth0 auth0 = new Auth0(getString(R.string.auth0_client_id), getString(R.string.auth0_domain_name));
-        this.client = auth0.newAPIClient();
+        this.client = auth0.newAuthenticationAPIClient();
         this.eventBus = new EventBus();
         final EventBusIdentityProviderCallback callback = new EventBusIdentityProviderCallback(eventBus, client);
         this.webProvider = new WebIdentityProvider(new CallbackParser(), auth0.getClientId(), auth0.getAuthorizeUrl());
@@ -63,17 +59,18 @@ public class MainActivity extends Activity {
                 String email = emailField.getText().toString();
                 String password = passwordField.getText().toString();
                 progress = ProgressDialog.show(MainActivity.this, null, null, true);
-                client.login(email, password, null, new AuthenticationCallback() {
-                    @Override
-                    public void onSuccess(UserProfile userProfile, Token token) {
-                        eventBus.post(new AuthenticationEvent(userProfile, token));
-                    }
+                client.login(email, password)
+                        .start(new AuthenticationCallback() {
+                            @Override
+                            public void onSuccess(UserProfile userProfile, Token token) {
+                                eventBus.post(new AuthenticationEvent(userProfile, token));
+                            }
 
-                    @Override
-                    public void onFailure(Throwable throwable) {
-                        eventBus.post(new ErrorEvent(R.string.login_failed_title, R.string.login_failed_message, throwable));
-                    }
-                });
+                            @Override
+                            public void onFailure(Throwable throwable) {
+                                eventBus.post(new ErrorEvent(R.string.login_failed_title, R.string.login_failed_message, throwable));
+                            }
+                        });
             }
         });
         Button twitterButton = (Button) findViewById(R.id.login_twitter_button);
@@ -140,11 +137,13 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Subscribe
     public void onEvent(ErrorEvent event) {
         progress.dismiss();
         event.showDialog(this);
     }
 
+    @Subscribe
     public void onEvent(AuthenticationEvent event) {
         UserProfile profile = event.getProfile();
         Log.i(TAG, "LOGGED IN!");

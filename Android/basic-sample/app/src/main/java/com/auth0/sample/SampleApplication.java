@@ -29,28 +29,22 @@ import android.app.Application;
 import com.auth0.core.Strategies;
 import com.auth0.facebook.FacebookIdentityProvider;
 import com.auth0.lock.Lock;
-import com.auth0.lock.LockBuilder;
-import com.auth0.lock.LockProvider;
+import com.auth0.lock.LockContext;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
-public class SampleApplication extends Application implements LockProvider {
+public class SampleApplication extends Application {
 
-    private Lock lock;
-
-    @Override
     public void onCreate() {
         super.onCreate();
-        lock = new Lock.Builder()
-                .loadFromApplication(this)
-                .withIdentityProvider(Strategies.Facebook, new FacebookIdentityProvider(this))
-                .build();
+
+        LockContext.configureLock(
+                new Lock.Builder()
+                        .loadFromApplication(this)
+                        .withIdentityProvider(Strategies.Facebook, new FacebookIdentityProvider(this))
+                        .closable(true)
+        );
         ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(configuration);
-    }
-
-    @Override
-    public Lock getLock() {
-        return lock;
     }
 }
